@@ -1,22 +1,56 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ShoppingCartSimple } from "phosphor-react"; 
+import { ShoppingCartSimple } from "phosphor-react";
+import Menubar from "./MenuSvg";
 
 export const Navbar = () => {
   return (
-    <div className="nav"> 
-    <h1>TONNY'S SHOE HIVE</h1>
-    <div className="navbar flex justify-evenly items-center text-lg">
-    <div className="links">
-      
-      <Link to={"/"} className="hover:text-slate-200">Shop</Link>
-      <input type="text" className="search" placeholder="Search for products..." />
-      <Link to={"/cart"} className="hover:text-slate-200">
-        <ShoppingCartSimple size={32} />
-      </Link>
-      </div>
-      <Link to={"/login"} className="login">Login</Link>
-    </div>
-    </div>
+    <header className="header">
+      <nav className="nav">
+        <h1>TONNY'S SHOE HIVE</h1>
+      </nav>
+      <ul className="links" id="links">
+        <li>
+          {" "}
+          <Link to={"/"} className="hover:text-slate-200">
+            Shop
+          </Link>
+        </li>
+        <li>
+          {" "}
+          <input
+            type="text"
+            className="search w-44"
+            placeholder="Search for products..."
+          />{" "}
+        </li>
+        <li>
+          {" "}
+          <Link to={"/"} className="about">
+            About
+          </Link>
+        </li>
+        <li>
+          {" "}
+          <Link to={"/"} className="contact">
+            Contact
+          </Link>
+        </li>
+        <li>
+          {" "}
+          <Link to={"/cart"} className="hover:text-slate-200">
+            <ShoppingCartSimple size={32} />
+          </Link>
+        </li>
+
+        <li>
+          {" "}
+          <Link to={"/login"} className="login">
+            Login
+          </Link>
+        </li>
+      </ul>
+      <Menubar />
+    </header>
   );
 };

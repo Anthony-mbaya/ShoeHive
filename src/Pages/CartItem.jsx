@@ -7,13 +7,11 @@ export default function CartItem(props) {
   const { cart, addToCart, removeFromCart, updateCart } =
     useContext(AppContext);
   return (
-    <div className="cart-display">
-    <div className="cart-image-container">
-      <img src={image} className="cart-image" />
-      </div>
-      <div className="cart-additional-info">
+    <div className="cart-display"> 
+      <img src={image} alt={shoeName} className="cart-image" /> 
       <h2>{shoeName}</h2>
       <p>Price:<span className="cart-price"> ${price}</span></p>
+      <div className="cart-buttons">
       <button onClick={() => addToCart(id)}> + </button>
       <input
         value={cart[id]}
@@ -21,7 +19,7 @@ export default function CartItem(props) {
         className="w-[80%] border-4 py-1 font-bold text-lg outline-none text-center "
       />
       <button onClick={() => removeFromCart(id)}> - </button>
-    </div>
+      </div> 
     </div>
   );
 }

@@ -2,128 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{ 
-    body{
-        @apply bg-cover bg-center bg-no-repeat bg-b-image overflow-scroll
-    }
-    .app{
-        @apply bg-inherit;
-    }
-    .nav{
-        @apply fixed top-0 w-full z-10 backdrop-blur-md
-    }
-    .links{
-        @apply flex items-center gap-[4vh] justify-around bg-green-400 w-[75%] p-4 rounded-xl mx-8
-    }
-    .login{
-        @apply rounded py-2 px-4 shadow-md hover:shadow-xl outline outline-offset-2 outline-transparent hover:outline-green-400 hover:font-bold
-    }
-    h1{
-        @apply m-5 text-3xl font-bold 
-    } 
-    .search{
-        @apply border border-slate-700 outline-none rounded-md px-2 py-2 w-[50%];
-    }
-    .form-container{
-        @apply max-w-[500px] mt-44 m-auto p-4 rounded-xl bg-green-100 shadow-2xl
-    }
-    .form{
-        @apply flex flex-col items-center gap-4
-    }
-    .form h2{
-        @apply align-middle mb-5 text-4xl font-semibold
-    } 
-    .form input{
-        @apply border border-slate-700 outline-none rounded-md px-2 py-2 w-[75%] mt-5;
-    }
-    .sub{
-        @apply text-white font-bold py-2 px-4 rounded shadow-md hover:shadow-xl
+@layer base {
+  body {
+    @apply bg-cover bg-center bg-no-repeat bg-b-image overflow-scroll;
+  }
+  .app {
+    @apply container  m-auto px-2 py-0 mt-44;
+  }
+  .header {
+    @apply fixed top-0 left-0  z-10 flex justify-center items-center h-40 shadow-lg w-full px-1 backdrop-blur-md;
+  }
+  .nav {
+    @apply flex items-center px-1 border-4;
+  }
+  .nav h1 {
+    @apply m-5 text-3xl font-bold text-center px-4 bg-green-300 rounded-full;
+  }
+  .links {
+    @apply hidden sm:flex space-x-4 list-none px-4 items-center gap-[4vh] justify-around bg-green-400 w-[75%] p-4 rounded-xl mx-8;
+  }
+  .login {
+    @apply rounded py-2 px-4 shadow-md hover:shadow-xl outline outline-offset-2 outline-transparent hover:outline-green-400 hover:font-bold;
+  }
+
+  .search {
+    @apply border border-slate-700 outline-none rounded-md px-2 py-2 w-[50%];
+  }
+  .form-container {
+    @apply max-w-[500px] mt-1 m-auto p-4 rounded-xl bg-green-100 shadow-2xl;
+  }
+  .form {
+    @apply flex flex-col items-center gap-4;
+  }
+  .form h2 {
+    @apply align-middle mb-5 text-4xl font-semibold;
+  }
+  .form input {
+    @apply border border-slate-700 outline-none rounded-md px-2 py-2 w-[75%] mt-5;
+  }
+  .sub {
+    @apply text-white font-bold py-2 px-4 rounded shadow-md hover:shadow-xl
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500
         transition-all ease-in-out duration-100 bg-black hover:bg-white hover:text-black;
-    }
-    .main-product-container, .cart-container{
-       @apply flex columns-4 gap-14 items-center flex-wrap justify-center mt-44 container m-auto w-[90%]
-    }
-    .cart-container{
-        @apply w-[65%] items-start ml-0 columns-3 
-    }
-    .item-display, .cart-display{
-        @apply border-4 w-[35%] sm:w-2/3 md:w-1/4 lg:w-1/5 shadow-lg px-6 py-4 rounded-lg 
-    }
-    .cart-display{
-        @apply w-[36%]
-    }
-    .image-container, .cart-image-container{
-        @apply flex items-center mb-4 border-4 w-full h-64 
-
-    }
-    .shop-image, .cart-image{
-        @apply w-[100%] h-[100%] rounded-md m-auto 
-    }
-    .info-container, .cart-additional-info{
-        @apply border-4 flex items-center flex-col p-5 font-semibold
-    }
-    .info-container h2{
-        @apply font-extrabold text-[1.2em] text-pretty
-    }
-    .cart-additional-info h2{
-        @apply font-extrabold text-[1.2em] text-pretty
-    }
-    .price, .cart-price {
-        @apply font-bold
-    }
-    .cartBtn{
-        @apply bg-green-400 hover:bg-slate-600 text-white px-4 py-2 shadow-xl rounded-lg mt-3
-    } 
-    .cart-additional-info button{
-        @apply bg-green-400 hover:bg-slate-600 text-white px-4 py-2 shadow-xl rounded-lg mt-3 mb-2
-    }
-    .totals{
-        @apply fixed top-40 right-0 z-10 border-4 w-[30%] h-[70%] m-auto bg-black text-white font-semibold flex items-start flex-col pt-8 pb-4 px-6 rounded-xl shadow-xl
-    }
-    .continue, .checkout{
-        @apply bg-green-400 hover:bg-slate-600 text-white px-4 py-2 shadow-xl rounded-lg mt-3
-    }
-    
+  }
+  .main-product-container,
+  .cart-container {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  mt-5;
+  }
+  .cart-container {
+    @apply w-[65%] items-start ml-0 columns-3;
+  }
+  .item-display,
+  .cart-display {
+    @apply bg-white p-4 rounded shadow-md hover:shadow-lg;
+  }
+  .shop-image,
+  .cart-image {
+    @apply w-full h-64 object-contain;
+  }
+  .cart-display h2 {
+    @apply font-extrabold text-[1.2em] text-pretty;
+  }
+  .price,
+  .cart-price {
+    @apply font-bold;
+  }
+  .cartBtn {
+    @apply bg-green-400 hover:bg-slate-600 text-white px-4 py-2 shadow-xl rounded-lg mt-3;
+  }
+  .cart-buttons {
+    @apply flex items-center flex-col;
+  }
+  .cart-buttons button {
+    @apply bg-green-400 hover:bg-slate-600 text-white px-4 py-2 shadow-xl rounded-lg mt-1 mb-1;
+  }
+  .totals {
+    @apply fixed top-40 right-0 z-10 border-4 w-[30%] h-[70%] m-auto bg-black text-white font-semibold flex items-start flex-col pt-8 pb-4 px-6 rounded-xl shadow-xl;
+  }
+  .continue,
+  .checkout {
+    @apply bg-green-400 hover:bg-slate-600 text-white px-4 py-2 shadow-xl rounded-lg mt-3;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*(
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";  
-*/
+ 
